@@ -47,7 +47,7 @@ console.log(JSON.stringify(swaggerSpec, null, 2))
 dotenv.config();
 
 export const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const mongoURI = process.env.MONGO_URI!;
 const jwtSecret = process.env.JWT_SECRET!;
 
