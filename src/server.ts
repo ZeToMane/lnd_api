@@ -948,6 +948,6 @@ app.put('/user/objects/update/:id', authenticate, upload.single('photo'), async 
 
 // Lancer le serveur
 app.listen(PORT, () => {
-    console.log(`Serveur en écoute sur http://localhost:${port}`);
-    console.log(`📄 Swagger Docs: http://localhost:${port}/docs`);
+    console.log(`Serveur en écoute sur http://localhost:${PORT}`);
+    console.log(`📄 Swagger Docs: http://localhost:${PORT}/docs`);
 });
