@@ -47,11 +47,9 @@ console.log(JSON.stringify(swaggerSpec, null, 2))
 dotenv.config();
 
 export const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const mongoURI = process.env.MONGO_URI!;
 const jwtSecret = process.env.JWT_SECRET!;
-
-const port = parseInt(process.env.PORT ?? '3000', 10);
 
 const upload = multer({ dest: 'uploads/' })
 
@@ -949,7 +947,7 @@ app.put('/user/objects/update/:id', authenticate, upload.single('photo'), async 
 });
 
 // Lancer le serveur
-app.listen(port, "0.0.0.0", () => {
+app.listen(PORT, () => {
     console.log(`Serveur en écoute sur http://localhost:${port}`);
     console.log(`📄 Swagger Docs: http://localhost:${port}/docs`);
 });
