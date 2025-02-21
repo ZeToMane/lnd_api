@@ -63,7 +63,8 @@ console.log("swaggerSpec: ", swaggerSpec)
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: 'http://localhost:3001', // Replace with your actual frontend URL
+    //origin: 'http://localhost:3001', // Replace with your actual frontend URL
+    origin: 'https://lnd-frontend.vercel.app/',
     credentials: true, // Allow credentials (cookies)
 };
 
