@@ -51,7 +51,7 @@ const PORT = process.env.PORT;
 const mongoURI = process.env.MONGO_URI!;
 const jwtSecret = process.env.JWT_SECRET!;
 
-const port = parseInt(process.env.PORT, 10)
+const port = parseInt(process.env.PORT ?? '3000', 10);
 
 const upload = multer({ dest: 'uploads/' })
 
