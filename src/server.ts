@@ -51,6 +51,8 @@ const PORT = process.env.PORT;
 const mongoURI = process.env.MONGO_URI!;
 const jwtSecret = process.env.JWT_SECRET!;
 
+const port = parseInt(process.env.PORT ?? '3000', 10);
+
 const upload = multer({ dest: 'uploads/' })
 
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
@@ -947,7 +949,7 @@ app.put('/user/objects/update/:id', authenticate, upload.single('photo'), async 
 });
 
 // Lancer le serveur
-app.listen(PORT, () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(`Serveur en écoute sur http://localhost:${PORT}`);
     console.log(`📄 Swagger Docs: http://localhost:${PORT}/docs`);
 });
